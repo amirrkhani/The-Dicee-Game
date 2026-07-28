@@ -1,41 +1,87 @@
+/* ==========================================================================
+   Global Reset & Custom Properties ✡
+   ========================================================================== */
+:root {
+  --bg-color: #39494b;
+  --title-color: #4e65cc;
+  --title-shadow: #312423;
+  --text-color: #4e9acc;
+  --footer-color: #eeeeee;
+  
+  --font-title: 'Lobster', cursive;
+  --font-body: 'Indie Flower', cursive;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* ==========================================================================
+   Layout & Components
+   ========================================================================== */
 .container {
-  width: 70%;
-  margin: auto;
+  width: 100%;
+  max-width: 900px;
   text-align: center;
+}
+
+.title {
+  margin: 30px 0;
+  font-family: var(--font-title);
+  text-shadow: 5px 0 var(--title-shadow);
+  font-size: clamp(4rem, 10vw, 8rem); /* ✡ Responsive fluid typography */
+  color: var(--title-color);
+}
+
+.dice-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .dice {
   text-align: center;
-  display: inline-block;
-
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
 }
 
-body {
-  background-color: #39494b;
-}
-
-h1 {
-  margin: 30px;
-  font-family: 'Lobster', cursive;
-  text-shadow: 5px 0 #312423;
-  font-size: 8rem;
-  color: #4e65cc;
-}
-
-p {
+.player-label {
   font-size: 2rem;
-  color: #4e9acc;
-  font-family: 'Indie Flower', cursive;
+  color: var(--text-color);
+  font-family: var(--font-body);
+  margin-bottom: 1rem;
 }
 
 img {
   width: 80%;
+  max-width: 250px;
+  height: auto;
 }
 
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 footer {
-  margin-top: 5%;
-  color: #EEEEEE;
+  margin-top: 3rem;
+  color: var(--footer-color);
   text-align: center;
-  font-family: 'Indie Flower', cursive;
-
+  font-family: var(--font-body);
+  font-size: 1.2rem;
 }
