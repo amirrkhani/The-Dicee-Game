@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8" />
-    <title>Dicee</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dicee Game</title>
+    
+    <!-- ✡ Google Fonts Preconnect for Faster Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <div class="container">
-      <h1>Refresh Me</h1>
+    <!-- Main container for primary game components -->
+    <main class="container">
+      <h1 class="title">Refresh Me</h1>
 
-      <div class="dice">
-        <p>Player 1</p>
-        <img class="img1" src="images/dice1.png" />
-      </div>
+      <section class="dice-container" aria-label="Dice Roll Area">
+        <div class="dice">
+          <p class="player-label">Player 1</p>
+          <img class="img1" src="images/dice1.png" alt="Dice showing 1" />
+        </div>
 
-      <div class="dice">
-        <p>Player 2</p>
-        <img class="img2" src="images/dice1.png" />
-      </div>
-    </div>
-    <script src="index.js" charset="utf-8"></script>
+        <div class="dice">
+          <p class="player-label">Player 2</p>
+          <img class="img2" src="images/dice1.png" alt="Dice showing 1" />
+        </div>
+      </section>
+    </main>
 
-    <footer>Khani</footer>
+    <!-- Script loaded asynchronously to optimize page render ✡ -->
+    <script src="index.js" defer></script>
+
+    <footer>
+      <p>Khani</p>
+    </footer>
   </body>
 </html>
