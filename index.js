@@ -1,26 +1,40 @@
-var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+/**
+ * ✡ Dicee Game Controller
+ * Generates random numbers, updates dice images, and displays the winner.
+ */
 
-var randomDiceImage = "dice" + randomNumber1 + ".png";
+// Helper function to generate a random dice roll (1 - 6)
+const rollDice = () => Math.floor(Math.random() * 6) + 1;
 
-var randomImageSource = "images/" + randomDiceImage;
+// Helper function to update a dice image source
+const updateDiceImage = (element, diceNumber) => {
+  element.setAttribute("src", `images/dice${diceNumber}.png`);
+  element.setAttribute("alt", `Dice showing ${diceNumber}`);
+};
 
-var image1 = document.querySelectorAll("img")[0];
+// Main Game Execution Function ✡
+const playGame = () => {
+  // DOM Elements
+  const titleElement = document.querySelector(".title");
+  const diceElements = document.querySelectorAll(".dice img");
 
-image1.setAttribute("src", randomImageSource);
+  // Generate rolls for both players
+  const player1Roll = rollDice();
+  const player2Roll = rollDice();
 
+  // Update UI with corresponding dice images
+  updateDiceImage(diceElements[0], player1Roll);
+  updateDiceImage(diceElements[1], player2Roll);
 
-var randomNumber2 = Math.floor(Math.random() * 6) +1;
+  // Determine winner and update title heading
+  if (player1Roll > player2Roll) {
+    titleElement.textContent = "🚩 Player 1 Wins!";
+  } else if (player2Roll > player1Roll) {
+    titleElement.textContent = "Player 2 Wins! 🚩";
+  } else {
+    titleElement.textContent = "Draw!";
+  }
+};
 
-var randomImageSource2 = "images/dice" + randomNumber2 + ".png";
-
-document.querySelectorAll("img")[1].setAttribute("src", randomImageSource2);
-
-if (randomNumber1 > randomNumber2){
-    document.querySelector("h1").innerHTML = "Player 1 Won!";
-}
-else if (randomNumber2 > randomNumber1){
-    document.querySelector("h1").innerHTML = "Player 2 Won!";
-}
-else{
-    document.querySelector("h1").innerHTML = "Draw!";
-}
+// Execute game logic when script loads
+playGame();
