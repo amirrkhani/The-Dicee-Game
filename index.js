@@ -38,3 +38,9 @@ const playGame = () => {
 
 // Execute game logic when script loads
 playGame();
+
+console.log(
+  "%c Crafted by Khani %c ✡ ",
+  "background: #39494b; color: #4e9acc; font-size: 14px; font-weight: bold; padding: 4px 8px; border-radius: 4px;",
+  "font-size: 14px;"
+);
